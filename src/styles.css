@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-moon-navy text-moon-white antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Moon glow effect for active elements */
+  .moon-glow {
+    box-shadow: 0 0 20px rgba(214, 196, 240, 0.3);
+  }
+  
+  .moon-glow-hover:hover {
+    box-shadow: 0 0 24px rgba(214, 196, 240, 0.4);
+  }
+  
+  .moon-glow-active {
+    box-shadow: 0 0 16px rgba(214, 196, 240, 0.5);
+  }
+}
+
+@layer utilities {
+  /* Ensure touch targets are at least 44px */
+  .touch-target {
+    min-width: 44px;
+  }
+  
+  /* Moon background gradient */
+  .moon-bg {
+    background: radial-gradient(ellipse at center, #2D2F50 0%, #1B1F3B 100%);
+  }
+  
+  /* Subtle lavender gradient overlay */
+  .moon-bg-overlay {
+    background: radial-gradient(ellipse at top, rgba(214, 196, 240, 0.08) 0%, transparent 70%);
+  }
+  
+  /* Ultra-thin slider track */
+  .slider-thin-track {
+    height: 3px !important;
+  }
+  
+  .slider-thin-track::-webkit-slider-runnable-track {
+    height: 3px !important;
+  }
+  
+  .slider-thin-track::-moz-range-track {
+    height: 3px !important;
+  }
+}
+
+

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified favicon: two crescent moons with sound waves -->
+  <!-- First crescent moon (left-facing) -->
+  <path
+    d="M16 32 A12 12 0 1 1 16 32.01"
+    fill="#F2F2F2"
+  />
+  <path
+    d="M20 32 A8 8 0 1 0 20 32.01"
+    fill="#1B1F3B"
+  />
+  
+  <!-- Sound waves -->
+  <path
+    d="M32 28 Q34 32 32 36"
+    stroke="#F2F2F2"
+    strokeWidth="2"
+    fill="none"
+    strokeLinecap="round"
+  />
+  <path
+    d="M36 26 Q40 32 36 38"
+    stroke="#F2F2F2"
+    strokeWidth="2"
+    fill="none"
+    strokeLinecap="round"
+  />
+  
+  <!-- Second crescent moon (right-facing) -->
+  <path
+    d="M48 32 A12 12 0 1 1 48 32.01"
+    fill="#F2F2F2"
+  />
+  <path
+    d="M44 32 A8 8 0 1 1 44 32.01"
+    fill="#1B1F3B"
+  />
+</svg>
