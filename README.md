@@ -47,6 +47,7 @@ Gentle, randomly selected messages appear when you stop audio:
 ### Prerequisites
 - Node.js 18+ and npm
 - Modern web browser with Web Audio API support
+- (Optional) Cloudflare Tunnel CLI (`cloudflared`) for public access during development
 
 ### Installation
 
@@ -188,16 +189,51 @@ MoonSound is designed to feel like a **quiet space** - not a dashboard. Every el
 
 ## 🌐 Deployment
 
-### Vercel (Recommended)
+### Quick Public Access with Cloudflare Tunnel
+
+For instant public access during development:
+
+1. **Install Cloudflare Tunnel** (if not already installed):
+   ```bash
+   # macOS
+   brew install cloudflared
+   
+   # Or download from: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/
+   ```
+
+2. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **In a new terminal, start the tunnel**:
+   ```bash
+   cloudflared tunnel --url http://localhost:5173
+   ```
+
+4. **Copy the public URL** shown in the output (e.g., `https://xxxxx.trycloudflare.com`)
+
+The tunnel will remain active as long as the command is running. The URL is temporary and changes each time you restart the tunnel.
+
+**Note**: The `vite.config.ts` is already configured to allow Cloudflare tunnel hosts.
+
+### Production Deployment
+
+#### Vercel (Recommended)
 1. Install Vercel CLI: `npm i -g vercel`
 2. Run: `vercel`
 3. Follow prompts (auto-detects Vite)
 
-### Netlify
+#### Netlify
 1. Build: `npm run build`
 2. Deploy: `netlify deploy --prod --dir=dist`
 
-### Other Platforms
+#### Cloudflare Pages
+1. Connect your GitHub repo at [dash.cloudflare.com](https://dash.cloudflare.com)
+2. Build command: `npm run build`
+3. Output directory: `dist`
+
+#### Other Platforms
 The `dist` folder contains static files that can be deployed to any hosting service.
 
 ## 📝 License
