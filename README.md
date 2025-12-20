@@ -5,7 +5,7 @@ A minimal, soothing web application designed to help manage tinnitus through cus
 ## ✨ Features
 
 ### 🎵 Core Audio Features
-- **Pure Tone Generator**: Adjustable frequency range from 500 Hz to 20,000 Hz
+- **Pure Tone Generator**: Adjustable frequency range from 200 Hz to 20,000 Hz
 - **Smooth Audio Transitions**: Exponential ramping to prevent clicks and pops
 - **Volume Control**: Safe volume cap at 0.4 gain maximum
 - **Frequency Persistence**: Remembers your last frequency and volume settings via localStorage

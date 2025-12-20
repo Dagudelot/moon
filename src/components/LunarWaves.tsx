@@ -33,10 +33,10 @@ export function LunarWaves({ frequency, isPlaying, volume }: LunarWavesProps) {
     window.addEventListener('resize', resizeCanvas);
 
     // Animation parameters based on frequency
-    // Lower frequencies (500-5000 Hz) = slower, wider pulses
+    // Lower frequencies (200-5000 Hz) = slower, wider pulses
     // Higher frequencies (5000-20000 Hz) = faster, thinner pulses
-    const normalizeFreq = Math.max(500, Math.min(20000, frequency));
-    const freqRatio = (normalizeFreq - 500) / (20000 - 500); // 0 to 1
+    const normalizeFreq = Math.max(200, Math.min(20000, frequency));
+    const freqRatio = (normalizeFreq - 200) / (20000 - 200); // 0 to 1
     
     // Pulse speed: slower at low freq, faster at high freq
     const baseSpeed = 0.5; // base animation speed

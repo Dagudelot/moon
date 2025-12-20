@@ -15,7 +15,7 @@ export function getStoredFrequency(): number {
   const stored = localStorage.getItem(STORAGE_KEYS.FREQUENCY);
   if (stored === null) return 3000;
   const parsed = parseFloat(stored);
-  return isNaN(parsed) ? 3000 : Math.max(500, Math.min(20000, parsed));
+  return isNaN(parsed) ? 3000 : Math.max(200, Math.min(20000, parsed));
 }
 
 /**
@@ -73,7 +73,7 @@ export function getStoredFoundFrequency(): number | null {
   const stored = localStorage.getItem(STORAGE_KEYS.FOUND_FREQUENCY);
   if (stored === null) return null;
   const parsed = parseFloat(stored);
-  return isNaN(parsed) ? null : Math.max(500, Math.min(20000, parsed));
+  return isNaN(parsed) ? null : Math.max(200, Math.min(20000, parsed));
 }
 
 /**

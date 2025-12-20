@@ -50,7 +50,7 @@ export function GuidedFrequencyFinder({
   };
 
   const handleAdjustDown = () => {
-    const newFreq = Math.max(500, foundFrequency - FREQ_STEP);
+    const newFreq = Math.max(200, foundFrequency - FREQ_STEP);
     setFoundFrequency(newFreq);
     onSetFrequency(newFreq);
     if (isPlayingTest) {

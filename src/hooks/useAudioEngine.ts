@@ -201,7 +201,7 @@ export function useAudioEngine(): AudioEngine {
 
   // Update frequency
   const updateFrequency = useCallback((hz: number) => {
-    const clamped = Math.max(500, Math.min(20000, hz));
+    const clamped = Math.max(200, Math.min(20000, hz));
     setFrequency(clamped);
     setStoredFrequency(clamped);
 

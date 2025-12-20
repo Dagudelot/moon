@@ -9,6 +9,8 @@ export default defineConfig({
     allowedHosts: [
       '.trycloudflare.com',
       '.cloudflareaccess.com',
+      'realized-basin-titans-regular.trycloudflare.com',
+      'use-poem-oct-colleague.trycloudflare.com'
     ],
   },
 })
