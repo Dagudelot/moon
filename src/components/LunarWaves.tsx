@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface LunarWavesProps {
   frequency: number;
@@ -56,7 +56,6 @@ export function LunarWaves({ frequency, isPlaying, volume }: LunarWavesProps) {
         return;
       }
 
-      const devicePixelRatio = window.devicePixelRatio || 1;
       const width = rect.width;
       const height = rect.height;
 
@@ -67,7 +66,6 @@ export function LunarWaves({ frequency, isPlaying, volume }: LunarWavesProps) {
         return;
       }
 
-      const deltaTime = currentTime - (timeRef.current || currentTime);
       timeRef.current = currentTime;
       
       const elapsed = timeRef.current * 0.001 * baseSpeed * speedMultiplier;

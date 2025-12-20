@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { setStoredFoundFrequency } from '../lib/storage';
 
 interface GuidedFrequencyFinderProps {
-  isReady: boolean;
   isPlaying: boolean;
   frequency: number;
-  onSweep: () => void;
   onSetFrequency: (hz: number) => void;
   onPlayTone: () => void;
   onStop: () => void;
@@ -15,10 +13,8 @@ interface GuidedFrequencyFinderProps {
 type Step = 'sweep' | 'question' | 'result';
 
 export function GuidedFrequencyFinder({
-  isReady,
   isPlaying,
   frequency,
-  onSweep,
   onSetFrequency,
   onPlayTone,
   onStop,
@@ -44,10 +40,6 @@ export function GuidedFrequencyFinder({
     }
   }, [step, isPlaying, frequency]);
 
-  const handleSweep = () => {
-    setStep('sweep');
-    onSweep();
-  };
 
   const handleAdjustDown = () => {
     const newFreq = Math.max(200, foundFrequency - FREQ_STEP);
