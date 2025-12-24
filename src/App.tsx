@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAudioEngineExtended } from './hooks/useAudioEngineExtended';
 import { FrequencySlider } from './components/FrequencySlider';
 import { Controls } from './components/Controls';
@@ -124,6 +124,7 @@ function App() {
             <ModoCalma
               noiseMode={audioEngine.noiseMode}
               onSelectMode={handleNoiseModeSelect}
+              isPlaying={audioEngine.isPlaying}
             />
           </div>
         )}
@@ -139,8 +140,10 @@ function App() {
       {/* Guided Frequency Finder Modal */}
       {showGuidedMode && (
         <GuidedFrequencyFinder
+          isReady={audioEngine.isReady}
           isPlaying={audioEngine.isPlaying}
           frequency={audioEngine.frequency}
+          onSweep={audioEngine.sweep}
           onSetFrequency={audioEngine.setFrequency}
           onPlayTone={audioEngine.playTone}
           onStop={audioEngine.stop}

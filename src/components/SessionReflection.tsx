@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const REFLECTION_MESSAGES = [
   'Hoy te conectaste con el silencio. 🌙',

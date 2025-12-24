@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import type { NoiseMode } from '../hooks/useAudioEngineExtended';
 
 interface ModoCalmaProps {
   noiseMode: NoiseMode;
   onSelectMode: (mode: NoiseMode) => void;
+  isPlaying: boolean;
 }
 
 const NOISE_DESCRIPTIONS = {
@@ -12,7 +13,7 @@ const NOISE_DESCRIPTIONS = {
   brown: '🌙 Más cálido y profundo. Úsalo cuando necesites descansar o soltar el día. Te envuelve como un abrazo sonoro.',
 };
 
-export function ModoCalma({ noiseMode, onSelectMode }: ModoCalmaProps) {
+export function ModoCalma({ noiseMode, onSelectMode, isPlaying }: ModoCalmaProps) {
   const [hoveredMode, setHoveredMode] = useState<NoiseMode | null>(null);
 
   return (
